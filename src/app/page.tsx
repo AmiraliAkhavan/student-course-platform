@@ -1,3 +1,5 @@
+import { Colors } from "./_components/colors/colors";
+
 export default function Home() {
-  return <div className="">React app arc</div>;
+  return <Colors />;
 }

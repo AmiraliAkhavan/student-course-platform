@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+html {
+    font-family: var(--font-iranyekan);
+}
+
+:lang(en) {
+    font-family: var(--font-figtree);
+}
