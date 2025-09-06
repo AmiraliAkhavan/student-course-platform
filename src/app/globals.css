@@ -1,6 +1,9 @@
+@import "../tailwind/components/components.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 html {
     font-family: var(--font-iranyekan);
@@ -8,4 +11,8 @@ html {
 
 :lang(en) {
     font-family: var(--font-figtree);
+}
+
+.gradient {
+    @apply bg-gradient-to-r from-gradient-first to-gradient-second text-transparent bg-clip-text
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { TopNavigation } from "./TopNavigation";
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <header className="border-b dark:border-base-content dark:border-opacity-5">
       <div className="  container flex items-center justify-between">
@@ -18,4 +18,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header;
+//  default Header;
