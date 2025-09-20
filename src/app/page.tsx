@@ -3,7 +3,12 @@ import { HomeHeroSection } from "./_components/home-hero-section/homeHeroSection
 
 async function getNewestCourses(count: number): Promise<CourseSummary[]> {
   const res = await fetch(
-    `https://api.classbon.com/api/courses/newest/${count}`
+    `https://api.classbon.com/api/courses/newest/${count}`,
+    {
+      next: {
+        revalidate: 24 * 60 * 60,
+      },
+    }
   );
   return res.json();
 }
