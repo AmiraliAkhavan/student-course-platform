@@ -1,11 +1,14 @@
-import Badge from "@/app/_components/badge/badge";
+import React from "react";
 import { CourseSummary } from "@/types/course-summary.interface";
 import Image from "next/image";
 import Link from "next/link";
+import { IconArrowLeftFill, IconClock } from "@/app/_components/icons/icons";
+import { Price } from "@/app/_components/price/Price";
+import Badge from "@/app/_components/badge/badge";
 
 export type CourseCardProps = CourseSummary & {};
 
-export default function CourseCard({
+export const CourseCard: React.FC<CourseCardProps> = ({
   coverImageId,
   title,
   subTitle,
@@ -14,7 +17,7 @@ export default function CourseCard({
   basePrice,
   duration,
   slug,
-}: CourseCardProps) {
+}: CourseCardProps) => {
   return (
     <div className="card">
       <figure>
@@ -32,14 +35,21 @@ export default function CourseCard({
       <div className="card-body">
         <Link href={`/course/${slug}`}>{title}</Link>
         <p>{subTitle}</p>
-        <div>
-          <Badge variant="warning">{duration}</Badge>
-          {basePrice}
+        <div className="flex justify-between items-center mt-3">
+          <Badge variant="warning">
+            <IconClock width={16} height={16} />
+            {duration}
+          </Badge>
+          <Price price={basePrice} size="small" />
         </div>
       </div>
-      <Link href={`/course/${slug}`} className="card-footer justify-center">
+      <Link
+        href={`/courses/${slug}`}
+        className="card-footer justify-center animated-icon"
+      >
         مشاهده جزئیات دوره
+        <IconArrowLeftFill fill="currentColor" />
       </Link>
     </div>
   );
-}
+};

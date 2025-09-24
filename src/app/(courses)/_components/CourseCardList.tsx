@@ -1,5 +1,5 @@
 import { CourseSummary } from "@/types/course-summary.interface";
-import CourseCard from "./CourseCard";
+import { CourseCard } from "./CourseCard";
 
 type CourseCardListProps = {
   courses: CourseSummary[];
